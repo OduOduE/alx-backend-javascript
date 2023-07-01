@@ -1,37 +1,30 @@
 export default class Pricing {
   constructor(amount, currency) {
-    this._amount = typeof amount === 'number' ? amount : 0;
-    this._currency = currency instanceof Currency ? currency : new Currency();
+    this._amount = amount;
+    this._currency = currency;
   }
 
   get amount() {
     return this._amount;
   }
 
-  set amount(newAmount) {
-    if (typeof newAmount === 'number') {
-      this._amount = newAmount;
-    }
+  set amount(naira) {
+    this._amount = naira;
   }
 
   get currency() {
     return this._currency;
   }
 
-  set currency(newCurrency) {
-    if (newCurrency instanceof Currency) {
-      this._currency = newCurrency;
-    }
+  set currency(dollars) {
+    this._currency = dollars;
   }
 
   displayFullPrice() {
-    return `${this._amount} ${this._currency.name} (${this._currency.code})`;
+    return `${this.amount} ${this.currency._name} (${this.currency._code})`;
   }
 
   static convertPrice(amount, conversionRate) {
-    if (typeof amount === 'number' && typeof conversionRate === 'number') {
-      return amount * conversionRate;
-    }
-    return 0;
+    return (amount * conversionRate);
   }
 }
