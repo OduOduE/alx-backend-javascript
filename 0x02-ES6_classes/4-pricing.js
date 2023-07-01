@@ -13,11 +13,11 @@ export default class Pricing {
   }
 
   get currency() {
-    return this._amount;
+    return this._currency;
   }
 
   set currency(dollars) {
-    this._amount = dollars;
+    this._currency = dollars;
   }
 
   displayFullPrice() {
