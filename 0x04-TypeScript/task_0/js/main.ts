@@ -19,6 +19,7 @@ const student2: Student = {
   lastName: "Atan",
   age: 19,
   location: "Atimbo"
+}
 
 // Create an array of students
 const studentsList = [student1, student2];
@@ -26,7 +27,7 @@ const studentsList = [student1, student2];
 const table = document.getElementById('studentTable') as HTMLTableElement;
 
 // Create a new row for each student and append it to the table
-studentsList.forEach((Student) => {
+studentsList.forEach((student) => {
         const row = table.insertRow();
         const firstNameCell = row.insertCell(0);
         const locationCell = row.insertCell(1);
