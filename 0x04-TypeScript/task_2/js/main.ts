@@ -9,7 +9,7 @@ interface TeacherInterface {
   getCoffeeBreak(): string;
   workTeacherTasks(): string;
 }
-
+  
 class Director implements DirectorInterface {
   workFromHome = () : string => 'Working from home';
   getCoffeeBreak = () : string => 'Getting a coffee break';
@@ -21,7 +21,6 @@ class Teacher implements TeacherInterface {
   getCoffeeBreak = () : string => 'Cannot have a break';
   workTeacherTasks = () : string => 'Getting to work';
 }
-
 
 export const createEmployee = (salary: number | string): Teacher | Director => Number(salary) < 500 ? new Teacher() : new Director();
 

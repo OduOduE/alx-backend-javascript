@@ -2,36 +2,33 @@ interface Teacher {
   readonly firstName: string,
   readonly lastName: string,
   fullTimeEmployee: boolean,
-  yearsOfExperience: number,
+  yearsOfExperience?: number,
   location: string,
-  [propName: string]: any
+  [propName: string]: any,
 }
 
 interface Directors extends Teacher {
-  numberOfReports: number
+  numberOfReports: number,
 }
 
-function printTeacher(firstName, lastName) {
-  return (firstName: string, lastName: string) : string =>
-  `${firstName.charAt[0]. lastName}`;
-}
+const printTeacher = (firstName:string, lastName:string) : string => `${firstName.charAt(0)}. ${lastName}`;
 
-class studentClass {
+class StudentClass {
   firstName: string;
   lastName: string;
 
   constructor(firstName: string, lastName: string) {
-    this.firstName: firstName;
-    this.lastName: lastName;
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 
-  workOnHomeWork = () : string => 'Currently working';
+  workOnHomework = () : string => 'Currently working';
 
   displayName = () : string => this.firstName;
 }
 
 interface StudentConstructor {
-      (firstName: string, lastName: string): classInterface;
+  (firstName: string, lastName: string): classInterface;
 }
 
 const student = new StudentClass("Paul", "jerry");
